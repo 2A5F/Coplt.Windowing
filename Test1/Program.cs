@@ -20,7 +20,9 @@ class Program
                 Centered = true,
             });
             Console.WriteLine(win);
-            win.On<WindowRectChangeEvent>(ev => Console.WriteLine(ev));
+            win.On<WindowSizeChangeEvent>(ev => Console.WriteLine(ev));
+            await Task.Delay(1000);
+            win.Close();
         });
         ws.MessageLoop();
     }
