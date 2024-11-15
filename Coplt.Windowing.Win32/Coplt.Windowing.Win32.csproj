@@ -5,16 +5,24 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>12.0</LangVersion>
+        <PlatformTarget>x64</PlatformTarget>
         <IsAotCompatible Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net7.0'))">true</IsAotCompatible>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Coplt.Mathematics" Version="0.4.0" />
+      <PackageReference Include="Coplt.Dropping" Version="0.5.1" />
+      <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.106">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
       <PackageReference Include="PolySharp" Version="1.14.1">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Coplt.Windowing\Coplt.Windowing.csproj" />
     </ItemGroup>
 
 </Project>
